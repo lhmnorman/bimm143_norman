@@ -6,13 +6,13 @@ Dr. Barry Grant's [Class Homepage](https://bioboot.github.io/bimm143_F25/) conta
 Classwork for BIMM143 at UC San Diego during fall 25
 
 * class 04: [R fundamentals](./class04]/week3plot.R%20(1).pdf) 
-* class 05: [Data Visualization with ggplot](./class05/class05-Doc.html)
+* class 05: [Data Visualization with ggplot](https://github.com/lhmnorman/bimm143_norman/blob/master/class05/Class05.pdfl)
 * class 06: [Writing R functions](https://github.com/lhmnorman/bimm143_norman/blob/master/class06/Lab6.pdf)
 
 * class 07: [Machine learning 1](./class07/lab7.html)
 * class 08: [Breast Cancer Analysis Mini Project](./class08/miniporject.Rmd)
 * class 09: [Structural Bioinformatics pt1](./class09/lab7hw9%20(1).pdf)
-* class 10: Halloween Mini Project()
+* class 10: Halloween Mini Project(https://github.com/lhmnorman/bimm143_norman/blob/master/class10/halloween-mini-project.pdf)
 * class 11: [Structural Bioinformatics II](./class11/lab11.qmd)
 * class 12: RNASeq analysis (https://github.com/lhmnorman/bimm143_norman/blob/master/class12/lab%2012.qmd)
 * class 13: Veteran's day
@@ -24,6 +24,6 @@ Classwork for BIMM143 at UC San Diego during fall 25
 * class 19 [Pertussis Mini Project](https://github.com/lhmnorman/bimm143_norman/blob/master/class19/lab%2019%20Pertussis%20Resurgence.qmd)
 
 Project:
-* [Find a Gene](https://github.com/lhmnorman/bimm143_norman/blob/master/Find_a_Gene_Project___2_.pdf)
+* [Find a Gene](https://github.com/lhmnorman/bimm143_norman/blob/master/find%20a%20gene/Find_a_Gene_Project___2_.pdf)
 
 
