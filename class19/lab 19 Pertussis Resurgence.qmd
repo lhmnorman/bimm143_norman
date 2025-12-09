@@ -1,0 +1,254 @@
+---
+title: "Lab 19 Pertussis Resurgence"
+format: html
+---
+
+1.  **Investigating pertussis cases by year**
+    -   **Q1.** With the help of the R “addin” package [**datapasta**](https://milesmcbain.github.io/datapasta/) assign the CDC pertussis case number data to a data frame called `cdc` and use **ggplot** to make a plot of cases numbers over time.
+
+```{r}
+cdc <- data.frame(
+  Year = c(
+    1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,
+    1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,
+    1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,
+    1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,
+    1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,
+    2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,
+    2018,2019,2020,2021,2022,2023
+  ),
+  Cases = c(
+    107473,164191,165418,152003,202210,181411,161799,197371,166914,172559,215343,179135,265269,
+    180518,147237,214652,227319,103188,183866,222202,191383,191890,109873,133792,109860,156517,
+    74715,69479,120718,68687,45030,37129,60886,62786,31732,28295,32148,40005,14809,11468,17749,
+    17135,13005,6799,7717,9718,4810,3285,4249,3036,3287,1759,2402,1738,1010,2177,2063,1623,1730,
+    1248,1895,2463,2276,3589,4195,2823,3450,4157,4570,2719,4083,6586,4617,5137,7796,6564,7405,
+    7298,7867,7580,9771,11647,25827,25616,15632,10454,13278,16858,27550,18719,48277,28639,32971,
+    20762,17972,18975,15609,18617,6124,2116,3044,7063
+  )
+)
+
+#library(ggplot2)
+#ggplot(cdc) +
+ # aes(Year, Cases) +
+ # geom_point() +
+ # geom_line() +
+ # labs(x = "Year", y = "Number of cases",
+       #title = "Pertussis Cases by Year (1922–2023)"
+       
+```
+
+![](images/Screenshot%202025-12-08%20190824.png)
+
+## **2. A tale of two vaccines (wP & aP)**
+
+-   **Q2.** Using the ggplot `geom_vline()` function add lines to your previous plot for the 1946 introduction of the wP vaccine and the 1996 switch to aP vaccine (see example in the hint below). What do you notice?
+
+```{r}
+#ggplot(cdc) +
+ # aes(Year, Cases) +
+ # geom_point() +
+ # geom_line() +
+  
+  # Vertical lines for wP (1946) and aP (1996)
+#  geom_vline(xintercept = 1946, color = "blue", linetype = "dashed", size = 1) +
+ # geom_vline(xintercept = 1996, color = "red", linetype = "dashed", size = 1) +
+  
+  # Labels for the lines
+ # annotate("text", x = 1946, y = max(cdc$Cases) * 0.95,
+         #  label = "wP", color = "blue", angle = 90, vjust = -0.5) +
+#  annotate("text", x = 1996, y = max(cdc$Cases) * 0.95,
+       #    label = "aP", color = "red", angle = 90, vjust = -0.5) +
+  #
+#  labs(
+  #  x = "Year",
+  ##  y = "Number of cases",
+  #  title = "Pertussis Cases by Year (1922–2023)"
+ # ) +
+ # theme_minimal()
+```
+
+![](images/Screenshot 2025-12-08 190952.png)
+
+**After 1946, pertussis cases dropped sharply following the introduction of the wP vaccine. After the switch to the aP vaccine in 1996, cases began to rise again**
+
+-   **Q3.** Describe what happened after the introduction of the aP vaccine? Do you have a possible explanation for the observed trend?
+
+**After the switch to the acellular pertussis (aP) vaccine, pertussis cases began rising again, with major peaks such as the 2012 outbreak. coud be due to bacterial evolution and immunity of the vaccine**
+
+## **3. Exploring CMI-PB data**
+
+```{r}
+#subject <- read_json("https://www.cmi-pb.org/api/subject", simplifyVector = TRUE) 
+#head(subject, 3)
+#table(subject$infancy_vac)
+#table(subject$biological_sex)
+```
+
+Q4. How many aP and wP infancy vaccinated subjects are in the dataset? ap=60, wp=58
+
+Q5. How many Male and Female subjects/patients are in the dataset? Female Male 112 60
+
+Q6. What is the breakdown of race and biological sex (e.g. number of Asian females, White males etc…)?
+
+```{r}
+#table(subject$biological_sex, subject$race)
+```
+
+white represent the largest group with 48 White females and 32 White males. Asian individuals form the next largest category, 32 Asian females and 12 Asian males.Smaller numbers are seen in other racial groups: Black or African American (2 females, 3 males), More Than One Race (15 females, 4 males), and Native Hawaiian or Pacific Islander (1 female, 1 male).
+
+Q7. Using this approach determine (i) the average age of wP individuals, (ii) the average age of aP individuals; and (iii) are they significantly different?
+
+```{r}
+#library(lubridate)
+# Use todays date to calculate age in days
+#subject$age <- today() - ymd(subject$year_of_birth)
+
+#library(dplyr)
+
+# aP
+#ap <- subject %>% filter(infancy_vac == "aP")
+#round( summary( time_length( ap$age, "years" ) ) )
+
+# wP
+#wp <- subject %>% filter(infancy_vac == "wP")
+#round( summary( time_length( wp$age, "years" ) ) )
+```
+
+i)  mean of ap-vacinated:28 ii)mean of wP-vaccinated:37
+ii) yes becayse aP vaccine was introduced in the late 1990s, so aP-vaccinated individuals tend to be younger adults. The wP vaccine was used before 1996, so wP-vaccinated individuals are older.
+
+Q8. Determine the age of all individuals at time of boost?
+
+```{r}
+#int <- ymd(subject$date_of_boost) - ymd(subject$year_of_birth)
+#age_at_boost <- time_length(int, "year")
+#head(age_at_boost)
+```
+
+Q9. With the help of a faceted boxplot or histogram (see below), do you think these two groups are significantly different?
+
+```{r}
+#ggplot(subject) +
+ # aes(time_length(age, "year"),
+ #     fill=as.factor(infancy_vac)) +
+  #geom_histogram(show.legend=FALSE) +
+ # facet_wrap(vars(infancy_vac), nrow=2) +
+ # xlab("Age in years")
+```
+
+```{}
+```
+
+![](images/Screenshot 2025-12-08 191136.png){r}
+# Complete the API URLs...
+specimen \<- read_json("https://www.cmi-pb.org/api/specimen", simplifyVector = TRUE)
+titer \<- read_json("https://www.cmi-pb.org/api/plasma_ab_titer", simplifyVector = TRUE)
+
+Q9. Complete the code to join specimen and subject tables to make a new merged data frame containing all specimen records along with their associated subject details:
+
+```{r}
+#library(dplyr)
+
+#meta <- left_join(specimen, subject, by = "subject_id")
+
+#dim(meta)
+#head(meta)
+```
+
+Q10. Now using the same procedure join meta with titer data so we can further analyze this data in terms of time of visit aP/wP, male/female etc.
+
+```{r}
+#abdata <- inner_join(titer, meta, by = "specimen_id")
+#dim(abdata)
+```
+
+Q11. How many specimens (i.e. entries in abdata) do we have for each isotype?
+
+```{r}
+#table(abdata$isotype)
+```
+
+Q12. What are the different \$dataset values in abdata and what do you notice about the number of rows for the most “recent” dataset?
+
+```{r}
+#table(abdata$dataset)
+```
+
+# **4. Examine IgG Ab titer levels**
+
+```{r}
+#igg <- abdata %>% filter(isotype == "IgG")
+#head(igg)
+```
+
+Q13. Complete the following code to make a summary boxplot of Ab titer levels (MFI) for all antigens:
+
+```{r}
+#ggplot(igg) +
+#  aes(MFI_normalised, antigen) +
+ # geom_boxplot() +
+ # xlim(0, 75) +
+ # facet_wrap(vars(visit), nrow = 2)
+```
+
+![](images/Screenshot 2025-12-08 191219.png)
+
+Q14. What antigens show differences in the level of IgG antibody titers recognizing them over time? Why these and not others?
+
+FIM2/3, PT, and PRN show clear changes in IgG levels over time because they are pertussis vaccine antigens, so the immune system is repeatedly stimulated against them. Antigens like OVA or others show little change because they are not part of the vaccine and the participants are not being boosted against them.
+
+Q15. Filter to pull out only two specific antigens for analysis and create a boxplot for each. You can chose any you like. Below I picked a “control” antigen (“OVA”, that is not in our vaccines) and a clear antigen of interest (“PT”, Pertussis Toxin, one of the key virulence factors produced by the bacterium B. pertussis).
+
+```{r}
+#filter(igg, antigen == "OVA") %>%
+ # ggplot() +
+ # aes(MFI_normalised, col = infancy_vac) +
+ # geom_boxplot(show.legend = TRUE) +
+ # facet_wrap(vars(visit)) +
+  #theme_bw()
+```
+
+![](images/Screenshot 2025-12-08 191300.png)
+
+```{r}
+#filter(igg, antigen == "PT") %>%
+ # ggplot() +
+ # aes(MFI_normalised, col = infancy_vac) +
+  #geom_boxplot(show.legend = TRUE) +
+ # facet_wrap(vars(visit)) +
+  #theme_bw()
+```
+
+![](images/Screenshot 2025-12-08 191349.png)
+
+Q16. What do you notice about these two antigens time courses and the PT data in particular? PT levels clearly rise over time and far exceed those of OVA. They also appear to peak at visit 5 and then decline. This trend appears similar for wP and aP subjects.
+
+Q17. Do you see any clear difference in aP vs. wP responses? There isn’t a dramatic separation between aP and wP groups, but wP subjects tend to show slightly higher and more sustained PT-specific IgG responses, especially at later visits. In contrast, aP responses appear lower and decline more quickly after the peak. The difference isn’t huge, but the pattern is consistent with the idea that wP induces broader and longer-lasting immunity than aP.
+
+Q18. Does this trend look similar for the 2020 dataset? yes
+
+# **5. Obtaining CMI-PB RNASeq data**
+
+```{r}
+#url <- "https://www.cmi-pb.org/api/v2/rnaseq?versioned_ensembl_gene_id=eq.ENSG00000211896.7"
+
+#rna <- read_json(url, simplifyVector = TRUE) 
+#meta <- inner_join(specimen, subject)
+#ssrna <- inner_join(rna, meta)
+```
+
+Q19. Make a plot of the time course of gene expression for IGHG1 gene (i.e. a plot of visit vs. tpm).
+
+```{r}
+#ggplot(ssrna) +
+ # aes(visit, tpm, group=subject_id) +
+  #geom_point() +
+  #geom_line(alpha=0.2)
+```
+
+![](images/Screenshot 2025-12-08 191430.png)
+
+Q20.: What do you notice about the expression of this gene (i.e. when is it at it’s maximum level)? IGHG1 expression clearly peaks at visit 4, where transcript levels (tpm) are highest across nearly all subjects. Before and after visit 4, expression drops sharply.
+
+Q21. Does this pattern in time match the trend of antibody titer data? If not, why not? No the timing does not match the antibody titer trend. Antibody titers peak later, while IGHG1 transcription peaks early (visit 4). This mismatch occurs because antibody titers reflect accumulated protein levels, which rise more slowly and persist long after transcription has declined.

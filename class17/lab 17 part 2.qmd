@@ -1,0 +1,57 @@
+---
+title: "lab 17 part 2"
+author: "Norman Lee A18086849"
+format: html
+---
+
+
+>Q13: Read this file into R and determine the sample size for each genotype and their
+corresponding median expression levels for each of these genotypes. Hint: The read.table(),
+summary() and boxplot() functions will likely be useful here. There is an example R script
+online to be used ONLY if you are struggling in vein. Note that you can find the medium value
+from saving the output of the boxplot() function to an R object and examining this object.
+There is also the medium() and summary() function that you can use to check your
+understanding
+
+```{r}
+expr <- read.table("https://bioboot.github.io/bggn213_W19/class-material/rs8067378_ENSG00000172057.6.txt")
+head(expr)
+```
+
+```{r}
+table(expr$geno)
+nrow(expr)
+tapply(expr$exp, expr$geno, median)
+```
+sizes:
+A/A = 108
+A/G = 233
+G/G = 121
+
+median    A/A      A/G      G/G 
+31.24847 25.06486 20.07363 
+```{r}
+library(ggplot2)
+```
+
+>Q14: Generate a boxplot with a box per genotype, what could you infer from the relative
+expression value between A/A and G/G displayed in this plot? Does the SNP effect the
+expression of ORMDL3? Hint: An example boxplot is provided overleaf – yours does not need
+to be as polished as this one.
+
+boxplot
+```{r}
+ggplot(expr)+aes(geno,exp, fill=geno)+ geom_boxplot()
+```
+A/A individuals have the highest expression, A/G individuals have medium expression, and G/G individuals have the lowest expression. Each additional G allele is associated with reduced expression, indicating that the G allele down-regulates.
+
+
+
+
+
+
+
+
+
+
+

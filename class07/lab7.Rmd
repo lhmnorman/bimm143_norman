@@ -1,0 +1,75 @@
+---
+title: "hw7"
+author: "Norman Lee"
+date: "2025-11-03"
+output:
+  html_document: default
+  pdf_document: default
+editor_options:
+  markdown:
+    wrap: sentence
+---
+
+---
+title: "lab9hw"
+author: "Norman Lee A18086849"
+format: html
+---
+
+Download a CSV file from the PDB site (accessible from “Analyze” \> “PDB Statistics” \> “by Experimental Method and Molecular Type”. Move this CSV file into your RStudio project and use it to answer the following questions:
+
+Q1: What percentage of structures in the PDB are solved by X-Ray and Electron Microscopy.
+**sum of x ray+ EM total/ sum of all values** \*\*(199931+29978)/244290\*100%= 94.5%\*\*
+
+Q2: What proportion of structures in the PDB are protein?
+\*\*239193/244290\*100%=97.9%\*\*
+
+Q3: Type HIV in the PDB website search box on the home page and determine how many HIV-1 protease structures are in the current PDB?
+**4866**
+
+Q4: Water molecules normally have 3 atoms.
+Why do we see just one atom per water molecule in this structure?
+\***Each water molecule is represented by a single oxygen atom because hydrogens are invisible in X-ray structures**
+
+Q5: There is a critical “conserved” water molecule in the binding site.
+Can you identify this water molecule?
+What residue number does this water molecule have **HOH 308**
+
+Q6: Generate and save a figure clearly showing the two distinct chains of HIV-protease along with the ligand.
+You might also consider showing the catalytic residues ASP 25 in each chain and the critical water (we recommend “Ball & Stick” for these side-chains).
+Add this figure to your Quarto document.
+
+![](images/1HSG%20(1).png)
+
+```{r}
+library(bio3d)
+pdb <- read.pdb("1hsg")
+
+pdb
+```
+
+Q7: How many amino acid residues are there in this pdb object?
+198 Q8: Name one of the two non-protein residues?
+HOH Q9: How many protein chains are in this structure?
+2
+
+```{r}
+attributes(pdb)
+
+```
+
+Q10.
+Which of the packages above is found only on BioConductor and not CRAN?
+msa
+
+Q11.
+Which of the above packages is not found on BioConductor or CRAN?:
+bio3dview
+
+Q12.
+True or False?
+Functions from the pak package can be used to install packages from GitHub and BitBucket?
+T
+
+Q13.How many amino acids are in this sequence, i.e. how long is this sequence?
+214 amino acids
