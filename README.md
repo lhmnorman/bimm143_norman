@@ -24,6 +24,6 @@ Classwork for BIMM143 at UC San Diego during fall 25
 * class 19 [Pertussis Mini Project](https://github.com/lhmnorman/bimm143_norman/blob/master/class19/lab%2019%20Pertussis%20Resurgence.qmd)
 
 Project:
-* [Find a Gene](https://github.com/lhmnorman/bimm143_norman/blob/master/find%20a%20gene/Find_a_Gene_Project___2_.pdf)
+* [Find a Gene](./find%20a%20gene/Find_a_Gene_Project___2_%20(1).pdf)
 
 
