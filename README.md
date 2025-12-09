@@ -5,8 +5,8 @@ Dr. Barry Grant's [Class Homepage](https://bioboot.github.io/bimm143_F25/) conta
 
 Classwork for BIMM143 at UC San Diego during fall 25
 
-* class 04: [R fundamentals](./class04]/week3plot.R%20(1).pdf) 
-* class 05: [Data Visualization with ggplot](https://github.com/lhmnorman/bimm143_norman/blob/master/class05/Class05.pdfl)
+* class 04: [R fundamentals](https://github.com/lhmnorman/bimm143_norman/blob/master/class04%5D/week3plot.R%20(1).pdf) 
+* class 05: [Data Visualization with ggplot](https://github.com/lhmnorman/bimm143_norman/blob/master/class05/Class05.pdf)
 * class 06: [Writing R functions](https://github.com/lhmnorman/bimm143_norman/blob/master/class06/Lab6.pdf)
 
 * class 07: [Machine learning 1](./class07/lab7.html)
