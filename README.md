@@ -19,7 +19,7 @@ Classwork for BIMM143 at UC San Diego during fall 25
 * class 14: [RNA-seq mini project](https://github.com/lhmnorman/bimm143_norman/blob/master/class14/lab%2014.qmd)
 * class 15: GitHub Repo
 * class 16: No report due
-* class 17: [Lab session](https://github.com/lhmnorman/bimm143_norman/blob/master/class17/lab_17_part_2.pdf)
+* class 17: [Lab session](https://github.com/lhmnorman/bimm143_norman/blob/master/class17/lab%2017%20part%202.qmd)
 * class 18: Thanksgiving
 * class 19 [Pertussis Mini Project](https://github.com/lhmnorman/bimm143_norman/blob/master/class19/lab%2019%20Pertussis%20Resurgence.qmd)
 
